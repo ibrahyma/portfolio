@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+@defer {
+    <router-outlet></router-outlet>
+} @loading (minimum 1s) {
+    <im-page-loader></im-page-loader>
+}

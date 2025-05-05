@@ -1,0 +1,11 @@
+.logo-container {
+	height: fit-content;
+	width: fit-content;
+	background-color: var(--logo-bg, transparent); /* Valeur par défaut */
+}
+
+svg {
+	width: var(--logo-size, 100px); /* Largeur personnalisable */
+	height: var(--logo-size, 100px);
+	color: var(--logo-color, var(--text));
+}

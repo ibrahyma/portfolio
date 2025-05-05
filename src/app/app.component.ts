@@ -1,10 +1,11 @@
 import { Component, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {PageLoaderComponent} from "./core/components/page-loader/page-loader.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet],
+    imports: [RouterOutlet, PageLoaderComponent],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })

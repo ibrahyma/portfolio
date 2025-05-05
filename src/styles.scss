@@ -1,0 +1,30 @@
+:root {
+	@media (prefers-color-scheme: light) {
+		--background: 255, 255, 255;
+		--text: 0, 0, 0;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		--background: 0, 0, 0;
+		--text: 255, 255, 255;
+	}
+}
+
+body {
+	background: rgb(var(--background));
+	color: rgb(var(--text));
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.light {
+	--background: 255, 255, 255;
+	--text: 0, 0, 0;
+}
+
+.dark {
+	--background: 0, 0, 0;
+	--text: 255, 255, 255;
+}
