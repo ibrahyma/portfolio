@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {TaskbarComponent} from "../../core/components/taskbar/taskbar.component";
-import {NgOptimizedImage} from "@angular/common";
 import {
   CustomableFolderIconComponent
 } from "../../shared/components/customable-folder-icon/customable-folder-icon.component";

@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {CustomableLogoComponent} from "../../../shared/components/customable-logo/customable-logo.component";
-import {NgOptimizedImage} from "@angular/common";
 
 @Component({
     selector: 'im-taskbar',
