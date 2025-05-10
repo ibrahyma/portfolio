@@ -1,0 +1,53 @@
+.desktop {
+	background: rgb(var(--background));
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 76px;
+	position: fixed;
+	height: 100%;
+	user-select: none;
+	width: 100%;
+
+	.container {
+		display: grid;
+		gap: 20px;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+		padding: 20px;
+		overflow: auto;
+
+
+		.shortcut-window {
+			border-radius: 3px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100px;
+			width: 100px;
+			text-wrap: nowrap;
+
+			span {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 100px;
+			}
+
+			&:hover {
+				background: rgba(lightblue, 0.5);
+
+				span {
+					overflow: visible;
+				}
+			}
+
+			&:active {
+				background: rgba(cornflowerblue, 0.5);
+				span {
+					overflow: visible;
+				}
+			}
+		}
+	}
+}

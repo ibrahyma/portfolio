@@ -1,11 +1,14 @@
 .logo-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	height: fit-content;
 	width: fit-content;
-	background-color: var(--logo-bg, transparent); /* Valeur par défaut */
+	background-color: var(--logo-bg, transparent);
 }
 
 svg {
-	width: var(--logo-size, 100px); /* Largeur personnalisable */
+	width: var(--logo-size, 100px);
 	height: var(--logo-size, 100px);
 	color: var(--logo-color, var(--text));
 }
