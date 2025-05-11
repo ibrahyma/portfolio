@@ -1,20 +1,28 @@
 .desktop {
-	background: rgb(var(--background));
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 76px;
-	position: fixed;
+	grid-template-rows: 1fr 113px;
+
 	height: 100%;
+	position: fixed;
 	user-select: none;
 	width: 100%;
 
 	.container {
+		background: var(--desktop-bg) !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;
+		color: var(--text);
+		text-shadow: 0 0 3px rgba(var(--theme-bg), 0.5);
 		display: grid;
 		gap: 20px;
 		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
-		padding: 20px;
+		height: 100%;
 		overflow: auto;
+		padding: 20px;
+		transition: background 0.25s ease-in-out;
 
 
 		.shortcut-window {
@@ -44,6 +52,7 @@
 
 			&:active {
 				background: rgba(cornflowerblue, 0.5);
+
 				span {
 					overflow: visible;
 				}

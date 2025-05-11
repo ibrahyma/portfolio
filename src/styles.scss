@@ -1,17 +1,39 @@
 :root {
+
 	@media (prefers-color-scheme: light) {
-		--background: 255, 255, 255;
+		--desktop-bg: url(../public/bg-light-sm.jpg);
+		--taskbar-bg: 240, 240, 240;
+		--theme-bg: 255, 255, 255;
 		--text: 0, 0, 0;
+
+		@media screen and (min-aspect-ratio: 2 / 3) {
+			--desktop-bg: url(../public/bg-light-md.jpg);
+		}
+
+		@media screen and (min-aspect-ratio: 16 / 9) {
+			--desktop-bg: url(../public/bg-light-lg.jpg);
+		}
 	}
 
 	@media (prefers-color-scheme: dark) {
-		--background: 0, 0, 0;
+		--desktop-bg: url(../public/bg-dark-sm.jpg);
+		--taskbar-bg: 32, 32, 32;
+		--theme-bg: 0, 0, 0;
 		--text: 255, 255, 255;
+
+		@media screen and (min-aspect-ratio: 2 / 3) {
+			--desktop-bg: url(../public/bg-dark-md.jpg);
+		}
+
+		@media screen and (min-aspect-ratio: 16 / 9) {
+			--desktop-bg: url(../public/bg-dark-lg.jpg);
+		}
 	}
 }
 
 
 body {
+	background: rgb(var(--theme-bg));
 	color: rgb(var(--text));
 	height: 100vh;
 	margin: 0;
@@ -25,11 +47,11 @@ ul {
 }
 
 .light {
-	--background: 255, 255, 255;
+	--theme-bg: 255, 255, 255;
 	--text: 0, 0, 0;
 }
 
 .dark {
-	--background: 0, 0, 0;
+	--theme-bg: 0, 0, 0;
 	--text: 255, 255, 255;
 }
