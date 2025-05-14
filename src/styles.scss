@@ -1,36 +1,39 @@
 :root {
+	--card-width: 175px;
+	--layout-component-bg-opacity: 0.065;
+	--window-border-color: 128, 128, 128;
+	--window-gap: 2rem;
 
 	@media (prefers-color-scheme: light) {
-		--desktop-bg: url(../public/bg-light-sm.jpg);
+		--desktop-bg: url(assets/images/background/bg-light-sm.jpg);
 		--taskbar-bg: 240, 240, 240;
 		--theme-bg: 255, 255, 255;
 		--text: 0, 0, 0;
 
 		@media screen and (min-aspect-ratio: 2 / 3) {
-			--desktop-bg: url(../public/bg-light-md.jpg);
+			--desktop-bg: url(assets/images/background/bg-light-md.jpg);
 		}
 
 		@media screen and (min-aspect-ratio: 16 / 9) {
-			--desktop-bg: url(../public/bg-light-lg.jpg);
+			--desktop-bg: url(assets/images/background/bg-light-lg.jpg);
 		}
 	}
 
 	@media (prefers-color-scheme: dark) {
-		--desktop-bg: url(../public/bg-dark-sm.jpg);
+		--desktop-bg: url(assets/images/background/bg-dark-sm.jpg);
 		--taskbar-bg: 32, 32, 32;
 		--theme-bg: 0, 0, 0;
 		--text: 255, 255, 255;
 
 		@media screen and (min-aspect-ratio: 2 / 3) {
-			--desktop-bg: url(../public/bg-dark-md.jpg);
+			--desktop-bg: url(assets/images/background/bg-dark-md.jpg);
 		}
 
 		@media screen and (min-aspect-ratio: 16 / 9) {
-			--desktop-bg: url(../public/bg-dark-lg.jpg);
+			--desktop-bg: url(assets/images/background/bg-dark-lg.jpg);
 		}
 	}
 }
-
 
 body {
 	background: rgb(var(--theme-bg));
@@ -38,12 +41,22 @@ body {
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	font-family: "Segoe UI", sans-serif;
+	font-family: "Segoe UI", sans-serif !important;
 	font-size: 0.8em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
 }
 
 ul {
 	list-style: none;
+}
+
+.dark {
+	--theme-bg: 0, 0, 0;
+	--text: 255, 255, 255;
 }
 
 .light {
@@ -51,7 +64,84 @@ ul {
 	--text: 0, 0, 0;
 }
 
-.dark {
-	--theme-bg: 0, 0, 0;
-	--text: 255, 255, 255;
+.window {
+	height: calc(100% - 76px);
+	left: 0;
+	max-height: 100vh;
+	max-width: 100vw;
+	min-height: 300px;
+	min-width: fit-content;
+	position: absolute;
+	top: 0;
+	width: fit-content;
+	z-index: 1;
+
+	button {
+		background: none;
+		border: none;
+		color: inherit;
+		cursor: default !important;
+		font: inherit;
+		line-height: normal;
+		overflow: visible;;
+		padding: 0;
+	}
+
+	.container {
+		border-radius: 1px;
+		border: 1px solid rgba( var(--window-border-color), 0.5);
+		box-shadow: 0 0 2px rgb(var(--window-border-color));
+		height: 100%;
+		overflow: auto;
+		scrollbar-width: none;
+		width: 100%;
+
+		-ms-overflow-style: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		.header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-left: 1em;
+
+			.small-title {
+				font-size: 1.1em;
+				letter-spacing: 0.025em;
+			}
+		}
+
+		.content {
+			padding: 1em var(--window-gap);
+		}
+	}
+
+	.close {
+		float: right;
+		font-size: 30px;
+		padding: 0 12px;
+		font-weight: 100;
+
+		&:active {
+			background: red !important;
+		}
+
+		&:hover {
+			background: #C00000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		&:active, &:hover {
+			color: white;
+		}
+	}
 }
+
+@import "assets/scss/shared";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
