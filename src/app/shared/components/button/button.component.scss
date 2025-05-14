@@ -1,0 +1,18 @@
+button {
+	background: rgba(var(--text), 0.1);
+	border: 1px solid rgba(var(--text), 0.125);
+	border-radius: 5px;
+	cursor: default;
+	display: inline-block;
+	font-size: 1.1em;
+	padding: 0.5rem 1rem;
+	transition: all 100ms ease-in-out;
+
+	&:hover {
+		background: rgba(var(--text), 0.2);
+	}
+
+	&:active {
+		background: transparent;
+	}
+}
