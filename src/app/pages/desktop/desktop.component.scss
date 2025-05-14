@@ -9,21 +9,19 @@
 	width: 100%;
 
 	.container {
+		position: relative;
 		background: var(--desktop-bg) !important;
 		background-position: center !important;
 		background-repeat: no-repeat !important;
 		background-size: cover !important;
 		color: var(--text);
-		text-shadow: 0 0 3px rgba(var(--theme-bg), 0.5);
+		text-shadow: 0 0 1em rgb(var(--theme-bg));
 		display: grid;
-		gap: 20px;
-		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
 		height: 100%;
 		overflow: auto;
 		padding: 20px;
 		transition: background 0.25s ease-in-out;
-
+		z-index: 0;
 
 		.shortcut-window {
 			border-radius: 3px;
