@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CtoLongCardComponent } from './cto-long-card.component';
+import { CtaLongCardComponent } from './cta-long-card.component';
 
 describe('CtoLongCardComponent', () => {
-  let component: CtoLongCardComponent;
-  let fixture: ComponentFixture<CtoLongCardComponent>;
+  let component: CtaLongCardComponent;
+  let fixture: ComponentFixture<CtaLongCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CtoLongCardComponent]
+      imports: [CtaLongCardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CtoLongCardComponent);
+    fixture = TestBed.createComponent(CtaLongCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

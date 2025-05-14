@@ -6,10 +6,10 @@ import {ButtonComponent} from "../button/button.component";
     imports: [
         ButtonComponent
     ],
-    templateUrl: './cto-long-card.component.html',
-    styleUrl: './cto-long-card.component.scss'
+    templateUrl: './cta-long-card.component.html',
+    styleUrl: './cta-long-card.component.scss'
 })
-export class CtoLongCardComponent {
+export class CtaLongCardComponent {
 
     @Input() mainText!: string;
     @Input() secondaryText!: string;
