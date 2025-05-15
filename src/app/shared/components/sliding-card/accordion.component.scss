@@ -1,0 +1,26 @@
+mat-expansion-panel {
+	background: rgba(var(--text), var(--layout-component-bg-opacity));
+	border-radius: 5px !important;
+
+	&-header {
+		padding: 1em;
+
+		&.mat-expanded {
+			background: unset !important;
+		}
+
+		&, &.mat-expanded {
+			height: unset !important;
+		}
+
+		.text-section {
+			align-items: center;
+			display: flex;
+		}
+	}
+
+	.expanded-content {
+		border-top: 2px solid rgb(var(--theme-bg));
+		padding: 1em;
+	}
+}

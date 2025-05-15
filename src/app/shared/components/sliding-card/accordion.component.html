@@ -1,0 +1,15 @@
+<mat-accordion>
+        <mat-expansion-panel expanded="true">
+            <mat-expansion-panel-header>
+                <div class="text-section">
+                    @if (materialIconName) {
+                        <mat-icon [icon-outline]="!(iconOutlined === undefined || iconOutlined === 'false')">{{ materialIconName }}</mat-icon>
+                    }
+                    <span class="header-text">{{ headerText }}</span>
+                </div>
+            </mat-expansion-panel-header>
+            <div class="expanded-content">
+                <ng-content></ng-content>
+            </div>
+        </mat-expansion-panel>
+</mat-accordion>
