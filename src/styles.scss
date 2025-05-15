@@ -64,6 +64,10 @@ ul {
 	--text: 0, 0, 0;
 }
 
+.mat-expansion-indicator {
+	fill: rgb(var(--text));
+}
+
 .window {
 	height: calc(100% - 76px);
 	left: 0;
