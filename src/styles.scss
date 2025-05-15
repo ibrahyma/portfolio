@@ -64,10 +64,18 @@ ul {
 	--text: 0, 0, 0;
 }
 
-.mat-expansion-indicator {
-	fill: rgb(var(--text));
+.mat-expansion {
+	&-indicator {
+		fill: rgb(var(--text));
+	}
+
+	&-panel-body {
+		width: 100%;
+		padding: 0 !important;
+	}
 }
 
+// TODO: Créer le composant Window représentant le modèle d'une fenêtre applicative.
 .window {
 	height: calc(100% - 76px);
 	left: 0;
@@ -93,7 +101,7 @@ ul {
 
 	.container {
 		border-radius: 1px;
-		border: 1px solid rgba( var(--window-border-color), 0.5);
+		border: 1px solid rgba(var(--window-border-color), 0.5);
 		box-shadow: 0 0 2px rgb(var(--window-border-color));
 		height: 100%;
 		overflow: auto;
@@ -146,6 +154,3 @@ ul {
 }
 
 @import "assets/scss/shared";
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

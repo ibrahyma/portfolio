@@ -4,6 +4,8 @@ mat-expansion-panel {
 
 	&-header {
 		padding: 1em;
+		font-size: 1.1em;
+		font-weight: 350;
 
 		&.mat-expanded {
 			background: unset !important;
@@ -11,6 +13,10 @@ mat-expansion-panel {
 
 		&, &.mat-expanded {
 			height: unset !important;
+		}
+
+		mat-icon {
+			margin-right: 0.5em;
 		}
 
 		.text-section {
