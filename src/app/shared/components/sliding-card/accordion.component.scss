@@ -6,6 +6,11 @@ mat-expansion-panel {
 		padding: 1em;
 		font-size: 1.1em;
 		font-weight: 350;
+		transition: all 100ms ease !important;
+
+		&:hover, &.mat-expanded:hover {
+			background: rgba(var(--text), var(--layout-component-bg-opacity)) !important;
+		}
 
 		&.mat-expanded {
 			background: unset !important;
