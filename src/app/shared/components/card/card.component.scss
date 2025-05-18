@@ -7,17 +7,17 @@
 	padding: 1rem;
 	width: var(--card-width);
 
-	&--title, &--caption {
-		font-size: 1rem;
+	&--heading-text, &--caption {
 		color: rgba(var(--text), 0.8);
+		font-size: var(--card-heading-caption-text-font-size);
 	}
 
-	&--title {
-		margin-bottom: 0.75rem;
+	&--heading-text {
+		margin-bottom: 0.75em;
 	}
 
 	&--main-text {
-		font-size: 1.4rem;
+		font-size: var(--card-main-text-font-size);
 		font-weight: bold;
 		margin-bottom: auto;
 	}
