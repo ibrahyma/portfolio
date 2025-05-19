@@ -37,7 +37,6 @@ export class DesktopComponent {
     window!: ViewContainerRef;
 
     activeWindow?: ComponentRef<WindowComponent>;
-    // selectedWindow: WritableSignal<ShortcutWindow | undefined> = signal(undefined);
 
     shortcuts: ShortcutWindow[] = [
         {
