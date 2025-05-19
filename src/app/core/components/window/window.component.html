@@ -1,0 +1,16 @@
+<div #window class="window" cdkDrag resizable>
+    <div class="container">
+        <div class="header">
+            <div class="topbar">
+                <span class="small-title" cdkDragHandle>{{ name | firstlettercase }}</span>
+                <div class="action-window">
+                    <button class="close" (click)="onClose()">&times;</button>
+                </div>
+            </div>
+            <h1 class="title">{{ name | firstlettercase }}</h1>
+        </div>
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
