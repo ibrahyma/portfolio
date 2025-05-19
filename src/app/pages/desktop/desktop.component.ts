@@ -1,7 +1,6 @@
 import {
     Component,
-    ComponentRef, Type,
-    ViewChild,
+    ComponentRef, ViewChild,
     ViewContainerRef
 } from '@angular/core';
 import {TaskbarComponent} from "../../core/components/taskbar/taskbar.component";
