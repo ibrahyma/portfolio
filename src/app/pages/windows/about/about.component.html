@@ -1,0 +1,119 @@
+<div #about class="window" cdkDrag>
+    <div class="resize-handle top" (mousedown)="onResize($event, 'top')"></div>
+    <div class="resize-handle right" (mousedown)="onResize($event, 'right')"></div>
+    <div class="resize-handle bottom" (mousedown)="onResize($event, 'bottom')"></div>
+    <div class="resize-handle left" (mousedown)="onResize($event, 'left')"></div>
+    <div class="resize-handle top-left" (mousedown)="onResize($event, 'top-left')"></div>
+    <div class="resize-handle top-right" (mousedown)="onResize($event, 'top-right')"></div>
+    <div class="resize-handle bottom-left" (mousedown)="onResize($event, 'bottom-left')"></div>
+    <div class="resize-handle bottom-right" (mousedown)="onResize($event, 'bottom-right')"></div>
+    <div class="container">
+        <div class="header" cdkDragHandle>
+            <span class="small-title">À propos</span>
+            <div class="action-window">
+                <button class="close" (click)="onClose()">&times;</button>
+            </div>
+        </div>
+        <div class="content">
+            <h1 class="title">À propos</h1>
+            <section class="description-cards">
+                <im-card title="👋 Nom" caption="">Ibrahyma MISSOMA</im-card>
+                <im-card
+                        title="💻 Principales technos"
+                        caption="Entreprise et projets"
+                >
+                    Angular + Java
+                </im-card>
+                <im-card title="💼 Expérience" caption="En alternance">2.5 ans</im-card>
+                <im-card
+                        title="📅 Disponibilité"
+                        caption="France entière"
+                >
+                    ASAP
+                </im-card>
+            </section>
+            <section class="contact-cards">
+                <im-cto-long-card
+                        mainText="Me contacter par e-mail"
+                        secondaryText="imissoma.portfolio@gmail.com"
+                >
+                    <a href="mailto:imissoma.portfolio@gmail.com">Envoyer un e-mail</a>
+                </im-cto-long-card>
+                <im-cto-long-card
+                        mainText="Me contacter par téléphone"
+                        secondaryText="(+33) 07.87.04.66.97"
+                >
+                    <a href="tel:+33787046697">Téléphoner</a>
+                </im-cto-long-card>
+            </section>
+            <section class="skills">
+                <im-accordion
+                        materialIconName="psychology"
+                        icon-outlined
+                        headerText="Qualités intrapersonnelles et interpersonnelles"
+                >
+                    <ul class="skills-list">
+                        <li>Remise en question</li>
+                        <li>Sens de l'analyse</li>
+                        <li>Organisation</li>
+                        <li>Persévérance</li>
+                        <li>Rigueur</li>
+                        <li>Autonomie</li>
+                        <hr>
+                        <li>Écoute active</li>
+                        <li>Pédagogie</li>
+                    </ul>
+                </im-accordion>
+                <im-accordion
+                        materialIconName="construction"
+                        headerText="Compétences fonctionnelles"
+                >
+                    <ul class="skills-list">
+                        <li>Suivi d'un projet via un outil de collaboration</li>
+                        <li>Rédaction et découpage de user stories</li>
+                        <li>Compréhension des comportements utilisateurs</li>
+                        <li>Écoute active des besoins utilisateurs</li>
+                        <li>Travail en équipe pluridisciplinaire</li>
+                        <hr>
+                        <li>Interprétation des retours API côté interface utilisateur</li>
+                        <li>Intégration de maquettes UX/UI dans le respect du design system</li>
+                        <li>Gestion des formulaires complexes avec validations métiers</li>
+                        <li>Réactivité et adaptabilité des interfaces</li>
+                        <li>Optimisation de l’expérience utilisateur</li>
+                        <hr>
+                        <li>Conception d’API REST ou WebSocket adaptées au besoin métiers</li>
+                        <li>Mise en place de logique métier robuste</li>
+                        <li>Mise en place d'un test de logique métier</li>
+                        <li>Mise en place de règles de sécurité applicative</li>
+                        <li>Conformité RGPD</li>
+                        <li>Traçabilité des actions utilisateur (logs, audit)</li>
+                        <hr>
+                        <li>Documentation fonctionnelle sur Confluence ou Notion</li>
+                        <li>Gestion de version de la documentation produit</li>
+                        <li>Intégration continue/déploiement continu (CI/CD)</li>
+                    </ul>
+                </im-accordion>
+                <im-accordion
+                    materialIconName="code"
+                    headerText="Technologies et outils"
+                >
+                    <ul class="skills-list">
+                        <li>Angular</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <hr>
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>Node.js</li>
+                        <hr>
+                        <li>Git / GitHub / GitLab</li>
+                        <li>Conteneurisation Docker</li>
+                        <li>Notion</li>
+                        <li>Trello</li>
+                        <li>Slack</li>
+                    </ul>
+                </im-accordion>
+            </section>
+        </div>
+    </div>
+</div>
