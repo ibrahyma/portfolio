@@ -1,10 +1,27 @@
-import {Component, ComponentRef, OnInit, Type, ViewChild, ViewContainerRef} from '@angular/core';
+import {
+    Component,
+    ComponentRef, Type,
+    ViewChild,
+    ViewContainerRef
+} from '@angular/core';
 import {TaskbarComponent} from "../../core/components/taskbar/taskbar.component";
 import {
     CustomableFolderIconComponent
 } from "../../shared/components/customable-folder-icon/customable-folder-icon.component";
 import {AboutComponent} from "../windows/about/about.component";
 import {CdkDrag} from "@angular/cdk/drag-drop";
+import {SchoolComponent} from "../windows/school/school.component";
+import {WindowComponent} from "../../core/components/window/window.component";
+import {ExperiencesComponent} from "../windows/experiences/experiences.component";
+import {ProjectsComponent} from "../windows/projects/projects.component";
+
+interface ShortcutWindow {
+    id: string;
+    name: string;
+    color: string;
+    shadowColor: string;
+    component: any;
+}
 
 @Component({
     selector: 'app-desktop',
@@ -16,15 +33,12 @@ import {CdkDrag} from "@angular/cdk/drag-drop";
     templateUrl: './desktop.component.html',
     styleUrl: './desktop.component.scss'
 })
-export class DesktopComponent implements OnInit {
+export class DesktopComponent {
     @ViewChild("window", {read: ViewContainerRef, static: true})
     window!: ViewContainerRef;
 
-    activeWindow?: ComponentRef<any>;
-
-    ngOnInit() {
-        this.openWindow(AboutComponent)
-    }
+    activeWindow?: ComponentRef<WindowComponent>;
+    // selectedWindow: WritableSignal<ShortcutWindow | undefined> = signal(undefined);
 
     shortcuts: ShortcutWindow[] = [
         {
@@ -32,51 +46,40 @@ export class DesktopComponent implements OnInit {
             id: 'about',
             color: '#88CCFF',
             shadowColor: '#224488',
-            action: () => this.openWindow(AboutComponent)
+            component: AboutComponent
         },
         {
             name: 'Formation',
             id: 'formation',
             color: '#80E880',
             shadowColor: '#116611',
-            action: function () {
-                console.log(`${this.id} action triggered`);
-            }
+            component: SchoolComponent
         },
         {
             name: 'Expérience',
             id: 'experience',
             color: '#FFCC88',
             shadowColor: '#442211',
-            action: function () {
-                console.log(`${this.id} action triggered`);
-            }
+            component: ExperiencesComponent
         },
         {
             name: 'Projets',
             id: 'projets',
             color: '#CC88FF',
             shadowColor: '#441122',
-            action: function () {
-                console.log(`${this.id} action triggered`);
-            }
+            component: ProjectsComponent
         }
     ];
 
 
-    private openWindow(component: Type<any>) {
+    protected openWindow(shortcut: ShortcutWindow) {
         if (this.activeWindow) {
             this.activeWindow.destroy();
         }
 
-        this.activeWindow = this.window.createComponent(component);
+        const window = this.window.createComponent(WindowComponent);
+        window.instance.name = shortcut.name;
+        window.instance.appendComponent(shortcut.component);
+        this.activeWindow = window;
     }
-}
-
-interface ShortcutWindow {
-    id: string;
-    name: string;
-    color: string;
-    shadowColor: string;
-    action: () => any;
 }

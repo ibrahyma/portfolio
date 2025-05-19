@@ -10,7 +10,9 @@
             <h1 class="title">{{ name | firstlettercase }}</h1>
         </div>
         <div class="content">
-            <ng-content></ng-content>
+            <!--<ng-content></ng-content>-->
+                <ng-container #container></ng-container>
+
         </div>
     </div>
 </div>
