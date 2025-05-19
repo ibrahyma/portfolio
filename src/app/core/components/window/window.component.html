@@ -4,7 +4,12 @@
             <div class="topbar">
                 <span class="small-title" cdkDragHandle>{{ name | firstlettercase }}</span>
                 <div class="action-window">
-                    <button class="close" (click)="onClose()">&times;</button>
+                    @if (isMaximized()) {
+                        <button class="minimize" title="Restaurer" (click)="onMinimize()">&ndash;</button>
+                    } @else {
+                        <button class="maximize" title="Agrandir" (click)="onMaximize()">&squ;</button>
+                    }
+                    <button class="close" title="Fermer" (click)="onClose()">&times;</button>
                 </div>
             </div>
             <h1 class="title">{{ name | firstlettercase }}</h1>
