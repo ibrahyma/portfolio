@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener, inject, OnInit} from '@angular/core';
+import {Directive, ElementRef, HostListener, inject} from '@angular/core';
 
 interface ResizeState {
     resizing: boolean;
