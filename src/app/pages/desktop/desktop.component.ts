@@ -35,15 +35,6 @@ export class DesktopComponent implements OnInit {
             action: () => this.openWindow(AboutComponent)
         },
         {
-            name: 'Compétences',
-            id: 'competences',
-            color: '#FFCC88',
-            shadowColor: '#442211',
-            action: function () {
-                console.log(`${this.id} action triggered`);
-            }
-        },
-        {
             name: 'Formation',
             id: 'formation',
             color: '#80E880',
@@ -55,8 +46,8 @@ export class DesktopComponent implements OnInit {
         {
             name: 'Expérience',
             id: 'experience',
-            color: '#FF6060',
-            shadowColor: '#221111',
+            color: '#FFCC88',
+            shadowColor: '#442211',
             action: function () {
                 console.log(`${this.id} action triggered`);
             }
@@ -66,15 +57,6 @@ export class DesktopComponent implements OnInit {
             id: 'projets',
             color: '#CC88FF',
             shadowColor: '#441122',
-            action: function () {
-                console.log(`${this.id} action triggered`);
-            }
-        },
-        {
-            name: 'Contact',
-            id: 'contact',
-            color: '#FFA858',
-            shadowColor: '#442211',
             action: function () {
                 console.log(`${this.id} action triggered`);
             }

@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/static-variables";
+
 .card {
 	background: rgba(var(--text), var(--layout-component-bg-opacity)) !important;
 	border-radius: 5px;

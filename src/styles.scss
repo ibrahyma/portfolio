@@ -1,11 +1,12 @@
+@import "assets/scss/static-variables";
+
 :root {
 	--card-width: 125px;
 	--card-heading-caption-text-font-size: 0.75rem;
 	--card-main-text-font-size: 1.25em;
-	//--card-main-text-font-size-sm: 1.4rem;
-	//--card-font-size-sm: 1rem;
-	//--card-width-sm: 175px;
+
 	--layout-component-bg-opacity: 0.065;
+	--taskbar-calculated-height: 73px;
 	--window-border-color: 128, 128, 128;
 	--window-gap: 2rem;
 
@@ -37,6 +38,12 @@
 		@media screen and (min-aspect-ratio: 16 / 9) {
 			--desktop-bg: url(assets/images/background/bg-dark-lg.jpg);
 		}
+	}
+
+	@media screen and (min-width: $breakpoint-min-sm) {
+		--card-main-text-font-size: 1.4rem;
+		--card-font-size: 1rem;
+		--card-width: 175px;
 	}
 }
 
@@ -82,7 +89,7 @@ ul {
 
 // TODO: Créer le composant Window représentant le modèle d'une fenêtre applicative.
 .window {
-	height: calc(100% - 76px);
+	height: calc(100% - var(--taskbar-calculated-height, 0px));
 	left: 0;
 	max-height: 100vh;
 	max-width: 100vw;
@@ -106,8 +113,7 @@ ul {
 
 	.container {
 		border-radius: 1px;
-		border: 1px solid rgba(var(--window-border-color), 0.5);
-		box-shadow: 0 0 2px rgb(var(--window-border-color));
+		box-shadow: 0 0 3px rgb(var(--window-border-color));
 		height: 100%;
 		overflow: auto;
 		scrollbar-width: none;
@@ -141,6 +147,7 @@ ul {
 		font-size: 30px;
 		padding: 0 12px;
 		font-weight: 100;
+		background: transparent;
 
 		&:active {
 			background: red !important;

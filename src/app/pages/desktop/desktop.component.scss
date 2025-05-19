@@ -2,24 +2,26 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 113px;
-
 	height: 100%;
 	position: fixed;
 	user-select: none;
 	width: 100%;
 
-	.container {
-		position: relative;
+	& > .container {
 		background: var(--desktop-bg) !important;
 		background-position: center !important;
 		background-repeat: no-repeat !important;
 		background-size: cover !important;
 		color: var(--text);
-		text-shadow: 0 0 1em rgb(var(--theme-bg));
-		display: grid;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-wrap: wrap;
 		height: 100%;
 		overflow: auto;
 		padding: 20px;
+		position: relative;
+		text-shadow: 0 0 1em rgb(var(--theme-bg));
 		transition: background 0.25s ease-in-out;
 		z-index: 0;
 
