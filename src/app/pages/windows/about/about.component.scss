@@ -21,35 +21,6 @@ section {
 .skills {
 	display: grid;
 	gap: 10px;
-
-	ul.skills-list {
-		margin: 0;
-		padding: 0;
-	}
-
-	li {
-		font-size: 1.1em;
-		font-weight: 350;
-		padding: 1em 2.5em;
-		transition: all 250ms ease-in-out;
-
-		&:hover {
-			background: rgba(var(--text), var(--layout-component-bg-opacity));
-		}
-
-		&:not(:first-child) {
-			border-top: 1px solid rgb(var(--theme-bg));
-		}
-	}
-
-	hr {
-		display: none;
-	}
-
-	hr + li {
-		border-width: 3px;
-		border-color: rgba(var(--text), var(--layout-component-bg-opacity));
-	}
 }
 
 
