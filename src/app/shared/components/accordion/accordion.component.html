@@ -1,5 +1,5 @@
 <mat-accordion>
-        <mat-expansion-panel>
+        <mat-expansion-panel [expanded]="!(expanded === undefined || expanded === 'false')">
             <mat-expansion-panel-header>
                 <div class="text-section">
                     @if (materialIconName) {

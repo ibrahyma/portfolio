@@ -23,6 +23,7 @@ export class AccordionComponent {
 
     @Input() headerText!: string;
     @Input() materialIconName?: string;
+    @Input() expanded?: string;
     @Input('icon-outlined') iconOutlined?: string;
 
 }
