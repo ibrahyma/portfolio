@@ -3,23 +3,4 @@
 .school-career {
 	display: grid;
 	gap: 1em;
-
-	.details {
-		padding: 1em;
-		display: flex;
-		flex-direction: column;
-		gap: 1em;
-		font-size: 1.1em;
-
-		.field {
-			display: flex;
-			flex-direction: column;
-			row-gap: 0.5em;
-			column-gap: 1em;
-
-			&--text {
-				color: rgba(var(--text), 0.65);
-			}
-		}
-	}
 }

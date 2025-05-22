@@ -1,3 +1,5 @@
+@import "./static-variables";
+
 .title {
 	color: var(--text);
 	font-size: 2.75em;
@@ -39,7 +41,33 @@ im-accordion {
 		}
 	}
 
+	.details {
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		font-size: 1.1em;
 
+		.field {
+			display: flex;
+			flex-direction: column;
+			row-gap: 0.5em;
+			column-gap: 1em;
 
+			&--text {
+				color: rgba(var(--text), 0.65);
+			}
+		}
+	}
+}
 
+@media screen and (min-width: $breakpoint-min-sm) {
+	im-accordion {
+		.details {
+			.field {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
 }
