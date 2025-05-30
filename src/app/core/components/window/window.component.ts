@@ -37,12 +37,10 @@ export class WindowComponent {
     }
 
     protected onMinimize() {
-        // this.window.nativeElement.classList.remove("maximized");
         this.isMaximized.set(false);
     }
 
     protected onMaximize() {
-        // this.window.nativeElement.classList.add("maximized");
         this.isMaximized.set(true);
     }
 }
