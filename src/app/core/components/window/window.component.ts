@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, signal, ViewChild, ViewContainerRef} from 
 import {CdkDrag, CdkDragHandle} from "@angular/cdk/drag-drop";
 import {ResizableDirective} from "../../../shared/directives/resizable/resizable.directive";
 import {FirstLetterCasePipe} from "../../../shared/pipes/first-letter-case.pipe";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'im-window',
@@ -10,6 +11,7 @@ import {FirstLetterCasePipe} from "../../../shared/pipes/first-letter-case.pipe"
         CdkDragHandle,
         ResizableDirective,
         FirstLetterCasePipe,
+        NgClass,
     ],
   templateUrl: './window.component.html',
   styleUrl: './window.component.scss'
@@ -23,7 +25,7 @@ export class WindowComponent {
 
     @Input() name!: string;
 
-    isMaximized = signal(false);
+    isMaximized = signal(true);
 
     appendComponent(component: any) {
         this.container.clear();
@@ -35,12 +37,12 @@ export class WindowComponent {
     }
 
     protected onMinimize() {
-        this.window.nativeElement.classList.remove("maximized");
+        // this.window.nativeElement.classList.remove("maximized");
         this.isMaximized.set(false);
     }
 
     protected onMaximize() {
-        this.window.nativeElement.classList.add("maximized");
+        // this.window.nativeElement.classList.add("maximized");
         this.isMaximized.set(true);
     }
 }

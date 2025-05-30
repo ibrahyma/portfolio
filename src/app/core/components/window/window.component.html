@@ -1,4 +1,4 @@
-<div #window class="window" cdkDrag resizable>
+<div #window class="window" [ngClass]="{ maximized: isMaximized() }" cdkDrag resizable>
     <div class="container">
         <div class="header">
             <div class="topbar">
