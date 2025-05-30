@@ -33,6 +33,7 @@ interface ShortcutWindow {
     styleUrl: './desktop.component.scss'
 })
 export class DesktopComponent {
+
     @ViewChild("window", {read: ViewContainerRef, static: true})
     window!: ViewContainerRef;
 
@@ -69,8 +70,11 @@ export class DesktopComponent {
         }
     ];
 
+    private deviceIsDesktop(): boolean {
+        return window.matchMedia('(pointer: fine)').matches
+    }
 
-    protected openWindow(shortcut: ShortcutWindow) {
+    private openWindow(shortcut: ShortcutWindow) {
         if (this.activeWindow) {
             this.activeWindow.destroy();
         }
@@ -79,5 +83,15 @@ export class DesktopComponent {
         window.instance.name = shortcut.name;
         window.instance.appendComponent(shortcut.component);
         this.activeWindow = window;
+    }
+
+    protected onClick(shortcut: ShortcutWindow) {
+        if (this.deviceIsDesktop()) return;
+        this.openWindow(shortcut);
+    }
+
+    protected onDoubleClick(shortcut: ShortcutWindow) {
+        if (!this.deviceIsDesktop()) return;
+        this.openWindow(shortcut);
     }
 }
