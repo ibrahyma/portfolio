@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {ButtonComponent} from "../button/button.component";
 
 @Component({
-    selector: 'im-cto-long-card',
+    selector: 'im-cta-long-card',
     imports: [
         ButtonComponent
     ],

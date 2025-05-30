@@ -1,9 +1,6 @@
 @import "../../../../assets/scss/static-variables";
 
 $button-font-size: 1em;
-$button-padding: 0.5em 1em;
-
-$button-padding-sm: 0.5rem 1rem;
 $button-font-size-sm: 1.1em;
 
 button {
@@ -13,8 +10,9 @@ button {
 	cursor: default;
 	display: inline-block;
 	font-size: $button-font-size;
-	padding: $button-padding;
 	transition: all 100ms ease-in-out;
+	text-wrap: nowrap;
+	padding: 0;
 
 	&:hover {
 		background: rgba(var(--text), 0.2);
@@ -28,6 +26,5 @@ button {
 @media screen and (min-width: $breakpoint-min-sm) {
 	button {
 		font-size: $button-font-size-sm;
-		padding: $button-padding-sm;
 	}
 }

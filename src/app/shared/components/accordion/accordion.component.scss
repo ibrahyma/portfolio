@@ -3,6 +3,9 @@ mat-expansion-panel {
 	border-radius: 5px !important;
 
 	&-header {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
 		padding: 1em;
 		font-size: 1.1em;
 		font-weight: 350;
@@ -28,6 +31,12 @@ mat-expansion-panel {
 			align-items: center;
 			display: flex;
 			margin-right: 1em;
+		}
+
+		.button-section {
+			a {
+				color: rgb(var(--text));
+			}
 		}
 	}
 

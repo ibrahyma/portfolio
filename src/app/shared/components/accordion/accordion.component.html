@@ -7,6 +7,18 @@
                     }
                     <span class="header-text">{{ headerText }}</span>
                 </div>
+                @if (buttonText) {
+                    <div class="button-section">
+                        <im-button>
+                            @if (buttonLink) {
+                                <a class="action-button" [href]="buttonLink" target="_blank">{{ buttonText }}</a>
+                            }
+                            @else if (buttonOnClick) {
+                                <span class="action-button" (click)="buttonOnClick()">{{ buttonText }}</span>
+                            }
+                        </im-button>
+                    </div>
+                }
             </mat-expansion-panel-header>
             <div class="expanded-content">
                 <ng-content></ng-content>
