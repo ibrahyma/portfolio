@@ -1,9 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {
-    MatAccordion,
-    MatExpansionPanel,
-    MatExpansionPanelHeader
-} from "@angular/material/expansion";
+import {MatAccordion, MatExpansionPanel, MatExpansionPanelHeader} from "@angular/material/expansion";
 import {MatIcon} from "@angular/material/icon";
 import {IconOutlineDirective} from "../../directives/icon-outline/icon-outline.directive";
 import {ButtonComponent} from "../button/button.component";
@@ -41,7 +37,7 @@ export class AccordionComponent implements OnInit{
     }
 
     private buttonTextExistsButNoAction() {
-        return this.buttonText && (!this.buttonLink || this.buttonOnClick === undefined);
+        return this.buttonText && (!this.buttonLink && this.buttonOnClick === undefined);
     }
 
     private buttonLinkAndActionProvided() {
