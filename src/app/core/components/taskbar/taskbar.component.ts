@@ -1,5 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import {CustomableLogoComponent} from "../../../shared/components/customable-logo/customable-logo.component";
+import {AppComponent} from "../../../app.component";
+
+import packageJson from '../../../../../package.json';
 
 @Component({
     selector: 'im-taskbar',
@@ -11,17 +14,19 @@ import {CustomableLogoComponent} from "../../../shared/components/customable-log
 })
 export class TaskbarComponent implements OnInit, OnDestroy {
 
-    currentHour: string = '';
-    currentDate: string = '';
-    now: Date = new Date();
-    private intervalId: any;
+    protected currentHour: string = '';
 
-    ngOnInit(): void {
+    private intervalId: any;
+    protected currentDate: string = '';
+    protected now: Date = new Date();
+    private appComponent = inject(AppComponent);
+
+    ngOnInit() {
         this.updateDateTime();
         this.intervalId = setInterval(() => this.updateDateTime(), 1000);
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy() {
         if (this.intervalId) {
             clearInterval(this.intervalId);
         }
@@ -46,9 +51,17 @@ export class TaskbarComponent implements OnInit, OnDestroy {
         return `${day}/${month}/${year}`;
     }
 
-    protected readonly window = window;
-
     mainButtonClickHandler() {
-
+        this.appComponent.appendAlert(
+            'Portfolio IM',
+            `Version actuelle ${packageJson.version}.`,
+            [
+                {
+                    text: 'Fermer',
+                    action: () => {
+                        this.appComponent.clearAlert();
+                    }
+                }
+            ])
     }
 }
