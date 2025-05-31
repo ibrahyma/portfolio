@@ -1,0 +1,113 @@
+@import "./static-variables";
+
+.title {
+	color: var(--text);
+	font-size: 2.75em;
+	font-weight: normal;
+	font-family: "Segoe UI Semibold", sans-serif;
+}
+
+.close {
+	font-size: 30px !important;
+
+	&:active {
+		background: red !important;
+	}
+
+	&:hover {
+		background: #C00000 !important;
+	}
+
+	&:active, &:hover {
+		color: white !important;
+	}
+}
+
+im-button {
+	.action-button {
+		display: inline-block;
+		padding: $sharedButton-padding;
+		text-decoration: none;
+	}
+}
+
+.mat-icon-outline {
+	font-family: 'Material Icons Outlined', sans-serif !important;
+}
+
+im-accordion {
+	ul.list {
+		margin: 0;
+		padding: 0;
+
+		li.list-item {
+			font-size: 1.1em;
+			font-weight: 350;
+			padding: 1em 2.5em;
+			transition: all 250ms ease-in-out;
+
+			&:hover {
+				background: rgba(var(--text), var(--layout-component-bg-opacity));
+			}
+
+			&:not(:first-child) {
+				border-top: 1px solid rgb(var(--theme-bg));
+			}
+		}
+
+		hr.list-item--separator {
+			display: none;
+
+			& + li.list-item {
+				border-width: 3px;
+				border-color: rgba(var(--text), var(--layout-component-bg-opacity));
+			}
+		}
+	}
+
+	.details {
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		font-size: 1.1em;
+
+		.field {
+			display: flex;
+			flex-direction: column;
+			row-gap: 0.5em;
+			column-gap: 1em;
+
+			&--text {
+				color: rgba(var(--text), 0.65);
+			}
+
+			&--description {
+				@extend .field--text;
+				text-align: justify;
+			}
+		}
+	}
+
+	.mat-content {
+		justify-content: space-between;
+		margin-right: 1.5em;
+	}
+}
+
+@media screen and (min-width: $breakpoint-min-sm) {
+	im-accordion {
+		.details {
+			.field {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+
+	im-button {
+		.action-button {
+			padding: $sharedButton-padding-sm;
+		}
+	}
+}

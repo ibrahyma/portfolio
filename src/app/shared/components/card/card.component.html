@@ -1,0 +1,7 @@
+<div class="card">
+    <span class="card--heading-text">{{ title }}</span>
+    <span class="card--main-text"><ng-content></ng-content></span>
+    @if (caption) {
+        <span class="card--caption">{{ caption }}</span>
+    }
+</div>

@@ -1,0 +1,21 @@
+.long-card {
+	align-items: center;
+	background: rgba(var(--text), var(--layout-component-bg-opacity)) !important;
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+
+	.text-content {
+		display: flex;
+		flex-direction: column;
+
+		.main {
+			font-size: 1.1em;
+		}
+
+		.secondary {
+			color: rgba(var(--text), 0.6);
+		}
+	}
+}

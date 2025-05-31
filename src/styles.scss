@@ -1,0 +1,90 @@
+@import "assets/scss/static-variables";
+
+:root {
+	--card-width: 125px;
+	--card-heading-caption-text-font-size: 0.75rem;
+	--card-main-text-font-size: 1.25em;
+
+	--layout-component-bg-opacity: 0.065;
+	--taskbar-calculated-height: 73px;
+	--window-border-color: 128, 128, 128;
+	--window-gap: 2rem;
+
+	@media (prefers-color-scheme: light) {
+		--desktop-bg: url(assets/images/background/bg-light-sm.jpg);
+		--taskbar-bg: 240, 240, 240;
+		--theme-bg: 255, 255, 255;
+		--text: 0, 0, 0;
+
+		@media screen and (min-aspect-ratio: 2 / 3) {
+			--desktop-bg: url(assets/images/background/bg-light-md.jpg);
+		}
+
+		@media screen and (min-aspect-ratio: 16 / 9) {
+			--desktop-bg: url(assets/images/background/bg-light-lg.jpg);
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		--desktop-bg: url(assets/images/background/bg-dark-sm.jpg);
+		--taskbar-bg: 32, 32, 32;
+		--theme-bg: 0, 0, 0;
+		--text: 255, 255, 255;
+
+		@media screen and (min-aspect-ratio: 2 / 3) {
+			--desktop-bg: url(assets/images/background/bg-dark-md.jpg);
+		}
+
+		@media screen and (min-aspect-ratio: 16 / 9) {
+			--desktop-bg: url(assets/images/background/bg-dark-lg.jpg);
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-min-sm) {
+		--card-main-text-font-size: 1.4rem;
+		--card-font-size: 1rem;
+		--card-width: 175px;
+	}
+}
+
+body {
+	background: rgb(var(--theme-bg));
+	color: rgb(var(--text));
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", sans-serif !important;
+	font-size: 0.8em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.dark {
+	--theme-bg: 0, 0, 0;
+	--text: 255, 255, 255;
+}
+
+.light {
+	--theme-bg: 255, 255, 255;
+	--text: 0, 0, 0;
+}
+
+.mat-expansion {
+	&-indicator {
+		fill: rgb(var(--text));
+	}
+
+	&-panel-body {
+		width: 100%;
+		padding: 0 !important;
+	}
+}
+
+@import "assets/scss/shared";

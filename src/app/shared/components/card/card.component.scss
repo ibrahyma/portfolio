@@ -1,0 +1,26 @@
+@import "../../../../assets/scss/static-variables";
+
+.card {
+	background: rgba(var(--text), var(--layout-component-bg-opacity)) !important;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	height: calc(var(--card-width) * 0.75);
+	padding: 1rem;
+	width: var(--card-width);
+
+	&--heading-text, &--caption {
+		color: rgba(var(--text), 0.8);
+		font-size: var(--card-heading-caption-text-font-size);
+	}
+
+	&--heading-text {
+		margin-bottom: 0.75em;
+	}
+
+	&--main-text {
+		font-size: var(--card-main-text-font-size);
+		font-weight: bold;
+		margin-bottom: auto;
+	}
+}

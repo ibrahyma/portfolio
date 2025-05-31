@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+@defer {
+    <router-outlet></router-outlet>
+    <ng-container #alert></ng-container>
+
+} @loading (minimum 1s) {
+    <im-page-loader></im-page-loader>
+}

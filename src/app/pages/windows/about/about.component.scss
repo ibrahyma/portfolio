@@ -1,0 +1,26 @@
+a {
+	color: rgb(var(--text)) !important;
+	text-decoration: none !important;
+}
+
+section {
+	margin-bottom: 4rem;
+}
+
+.description-cards {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.contact-cards {
+	display: grid;
+	gap: 0.5em;
+}
+
+.skills {
+	display: grid;
+	gap: 10px;
+}
+
+

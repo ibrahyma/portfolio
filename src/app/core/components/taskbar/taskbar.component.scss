@@ -1,0 +1,86 @@
+.taskbar {
+	background: rgb(var(--taskbar-bg));
+	border-top: 1px solid rgba(var(--text), 0.5);
+	bottom: 0;
+	box-shadow: 0 0 1px 0 rgba(var(--text), 0.5);
+	display: grid;
+	grid-template-columns: 1fr 100px;
+	position: fixed;
+	user-select: none;
+	width: 100%;
+	z-index: 2;
+
+	.menu {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		margin: 0 0 0 50px;
+		padding: 13px 0;
+
+		.item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 50px;
+
+			--logo-size: 30px;
+			@extend .item-hover;
+
+			& > * {
+				transition: all 0.25s ease-in-out;
+			}
+
+			& > *:active {
+				transform: scale(0.75);
+			}
+
+			.bi {
+				font-size: calc(var(--logo-size) + 5px);
+			}
+		}
+	}
+
+	.time {
+		align-items: center;
+		margin: 6px;
+		padding: 6px;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+
+		@extend .item-hover;
+
+		&:active {
+			color: rgba(var(--text), 0.5);
+		}
+
+		time {
+			cursor: default;
+			font-family: "Segoe UI Light", sans-serif;
+			width: 100%;
+			text-align: right;
+		}
+	}
+}
+
+.item-hover {
+	border-radius: 3px;
+	cursor: auto;
+	transition: all 0.25s ease-in-out;
+
+	&:hover {
+		background: rgba(gray, 0.15);
+		box-shadow: 0 0 0 1px rgba(var(--text), 0.015);
+	}
+}
+
+a {
+	cursor: default;
+	color: inherit;
+	text-decoration: none;
+}
+
+.bi-linkedin {
+	color: #0077b5;
+}
