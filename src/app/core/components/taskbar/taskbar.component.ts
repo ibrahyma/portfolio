@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CustomableLogoComponent} from "../../../shared/components/customable-logo/customable-logo.component";
 
 @Component({
@@ -44,5 +44,11 @@ export class TaskbarComponent implements OnInit, OnDestroy {
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const year = date.getFullYear();
         return `${day}/${month}/${year}`;
+    }
+
+    protected readonly window = window;
+
+    mainButtonClickHandler() {
+
     }
 }

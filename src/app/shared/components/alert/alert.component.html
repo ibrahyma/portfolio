@@ -1,0 +1,17 @@
+<div cdkDrag class="alert">
+    <div cdkDragHandle class="alert-header">
+        <span>Information</span>
+        <span (click)="close()" class="close" title="Fermer">&times;</span>
+    </div>
+    <div class="alert-content">
+        <div class="alert-title">{{ title }}</div>
+        <div class="alert-description">{{ description }}</div>
+    </div>
+    <div class="alert-footer">
+        @for (button of buttons; track button) {
+            <im-button (click)="button.action()">
+                <div class="action-button">{{ button.text }}</div>
+            </im-button>
+        }
+    </div>
+</div>

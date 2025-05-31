@@ -7,6 +7,22 @@
 	font-family: "Segoe UI Semibold", sans-serif;
 }
 
+.close {
+	font-size: 30px !important;
+
+	&:active {
+		background: red !important;
+	}
+
+	&:hover {
+		background: #C00000 !important;
+	}
+
+	&:active, &:hover {
+		color: white !important;
+	}
+}
+
 im-button {
 	.action-button {
 		display: inline-block;

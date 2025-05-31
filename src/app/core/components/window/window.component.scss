@@ -93,7 +93,9 @@
 		.maximize, .minimize, .close {
 			display: flex;
 			align-items: center;
+			justify-content: center;
 			height: 40px;
+			width: 40px;
 			padding: 0 12px 7px;
 			background: transparent;
 		}
@@ -110,21 +112,7 @@
 			}
 		}
 
-		.close {
-			font-size: 30px;
 
-			&:active {
-				background: red !important;
-			}
-
-			&:hover {
-				background: #C00000;
-			}
-
-			&:active, &:hover {
-				color: white;
-			}
-		}
 	}
 
 }
